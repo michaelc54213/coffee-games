@@ -14,7 +14,7 @@ var gulpIf = require('gulp-if');
 
 var cssNano = require('gulp-cssnano');
 
-var del = require('gulp-del');
+var runSequence = require('run-sequence');
 
 //Run gulp sass plugin
 gulp.task('sass', function() {
@@ -54,6 +54,9 @@ gulp.task('useref', function() {
 	  .pipe(gulp.dest('dist'))
 });
 
-gulp.task('del', function(){
-     return del.sync('dis');
-}))
+
+gulp.task('default', function(callback){
+    runSequence(['sass', 'browserSync', 'watch'],
+	callback
+	)
+})
