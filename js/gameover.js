@@ -13,12 +13,14 @@ var gameoverState = {
 		//when the player presses the W key, we call the restart function
 		wkey.onDown.addOnce(this.restart, this);
 	},
+    removeMusic: function(introMusic) {
+			this.music.destroy();
+
+			game.cache.removeSound('intro');
+	},
+
 	restart: function(introMusic) {
 		game.state.start('menu');
 		game.sound.stopAll();
-		if (game.cache.checkSoundKey('introMusic'))
-		{
-			game.debug.soundInfo(this.music, 20, 32);
-		}
 	}
 }

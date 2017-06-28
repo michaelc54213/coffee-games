@@ -3,6 +3,7 @@ var playState = {
 	//game logic 
 	create: function() {
 	var ball;
+	var banana;
 	var fruit;
 	var music;
 	var gameOverSound;

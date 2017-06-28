@@ -1,5 +1,6 @@
 var menuState = {
 	create: function() {
+		
 		var introMusic = game.add.audio('intro'); 
 
 		introMusic.play(); //adds intro music to menu
