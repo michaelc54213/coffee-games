@@ -4,6 +4,7 @@ var preloadState = {
 		//loading bar
 		var loadingLabel = game.add.text(80, 150, 'loading...', {font: '30px Courier', fill: "#fff"});
 
+
 		//assets
 		game.load.image('ground', 'assets/platform.png');
 		game.load.image('ball', 'assets/fruit_apple1.png');

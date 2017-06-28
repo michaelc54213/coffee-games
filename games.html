@@ -36,6 +36,13 @@
     <![endif]-->
 
 	<!-- CATCH THE FRUIT JS FILES -->
+	<script type="text/javascript" src="js/phaser.js"></script>
+	<script type="text/javascript" src="js/boot.js"></script>
+	<script type="text/javascript" src="js/preload.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/play.js"></script>
+	<script type="text/javascript" src="js/gameover.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
 	<!-- END CATHE FRUIT FILES -->
   </head>
 
@@ -54,33 +61,24 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="games.html">Games</a></li>
+				  <li class="active"><a href="/">Home</a></li>
+            <li><a href="#">Games</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container" style="border: 1px solid red;">
+    <div class="container">
 
-      <div class="starter-template" style="border: 1px solid black;">
-	  <p style="font-size: 24px">Welcome to Coffee Games!</p>
-	  <p>Time to sit back and enjoy a nice up coffee...and some sweet games.</p>
-	  </div>
-
-	  <div class="middle-container" style="border: 1px solid green; height: 300px;">
-	       <div class="image-container" style="margin-left: 20%; float: left;"><img src="images/catch-the-fruit.png" alt="">
-		   </div>
-		   <div style="float: right;"> Catch The Fruit! A simply and addictive browser that tests too see how much fruit can you catch? Are you man enough to make sure that the fruit doesn't hit the ground? Test your skills and play the game right now!</div>
+      <div class="starter-template">
+	  <p style="font-size: 24px">Catch The Fruit!</p>
+	  <div id="gameDiv" style="width: 100%"></div>
 	  </div>
 
     </div><!-- /.container -->
-	<footer>
-	        <div class="footer navbar-fixed-bottom" style="background-color: black; height: 5%;">
-					<div style="border: 1px solid yellow; margin: 0 auto;">Hello</div>
-			</div>
-	</footer>
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
