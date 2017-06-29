@@ -47,9 +47,9 @@ var playState = {
 	this.ground.body.immovable = true;
 	},
 
-	update: function (yGrav, ball, xRandom) {
+	update: function (yGrav, ball, xRandom, banana) {
 		//collide player and balls with ground
-		game.physics.arcade.overlap(this.ball, this.platforms, this.gameOver, null, this)
+		game.physics.arcade.overlap(this.ball, this.platforms, this.gameOver, null, this, this.banana)
 
 		//checks collision for boy and ball
 		//sets y gravity to 12 before loop
@@ -96,7 +96,7 @@ var playState = {
 			if (this.x === 10)
 				this.xCord = 600;
 
-	    this.ball = this.fruit.create(this.xCord, 0, 'ball'); //recreates the ball	
+		this.randomFruit(this.xcord); //TEST CODE FOR BANANA
 		 if (this.yGravity < 1500) {
 			 this.yGravity = this.yGravity + 100;
 		 }
@@ -105,6 +105,20 @@ var playState = {
 		this.text.text = "Score: " + this.scoreNumber;
 		
 	 },
+	  randomFruit: function (banana, fruit, xCord, yCord, ball) {
+         var randomNum = Math.floor(Math.random() * 10);
+		 console.log(randomNum);
+		 if (randomNum <= 5) {
+				 this.banana = this.fruit.create(0, 0, 'banana');
+                 this.banana.body.gravity.y = 100;
+				 console.log("This should be a banana");
+		 } else {
+				 this.ball = this.fruit.create(0, 0, 'ball');
+				 this.ball.body.gravity.y = 100;
+				 console.log("This should be the ball");
+		 }
+
+	},
 
 	 gameOver: function (ball, fruit, text, scoreNumber, gameOverSound) {
 		this.gameOverSound = game.sound.play('gameover');
