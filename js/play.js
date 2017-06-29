@@ -49,7 +49,8 @@ var playState = {
 
 	update: function (yGrav, ball, xRandom, banana) {
 		//collide player and balls with ground
-		game.physics.arcade.overlap(this.ball, this.platforms, this.gameOver, null, this, this.banana)
+		game.physics.arcade.overlap(this.ball, this.platforms, this.gameOver, null, this)
+		game.physics.arcade.overlap(this.banana, this.platforms, this.gameOver, null, this)
 
 		//checks collision for boy and ball
 		//sets y gravity to 12 before loop
@@ -105,7 +106,7 @@ var playState = {
 		this.text.text = "Score: " + this.scoreNumber;
 		
 	 },
-	  randomFruit: function (banana, fruit, xCord, yCord, ball) {
+	  randomFruit: function (banana, fruit, xCord, yCord, ball, platforms, boy) {
          var randomNum = Math.floor(Math.random() * 10);
 		 console.log(randomNum);
 		 if (randomNum <= 5) {
