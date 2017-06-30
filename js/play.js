@@ -53,11 +53,11 @@ var playState = {
 		game.physics.arcade.overlap(this.banana, this.platforms, this.gameOver, null, this)
 
 		//checks collision for boy and ball
-		//sets y gravity to 12 before loop
-		if (game.physics.arcade.overlap(this.ball, this.boy, this.collectBall, null, this)) {
-		
+		game.physics.arcade.overlap(this.ball, this.boy, this.collectBall, null, this)
 
-		} //ends if statement
+		//Checks for collision between boy and banana
+		game.physics.arcade.overlap(this.banana, this.boy, this.collectBall, null, this)
+
 
 
 		cursors = game.input.keyboard.createCursorKeys();
@@ -78,9 +78,9 @@ var playState = {
 	},
 
 
-	 collectBall: function (ball, text, scoreNumber, yGravity, xCord, music) {
+	 collectBall: function (ball, text, scoreNumber, yGravity, xCord, music, fruit) {
 		//removes ball from screen
-		ball.kill();	//removes ball from screen
+		ball.kill();
 		this.music = game.sound.play('bleep');
 			this.x = Math.floor(Math.random() * 10);
 			this.xCord = 0;
@@ -97,7 +97,7 @@ var playState = {
 			if (this.x === 10)
 				this.xCord = 600;
 
-		this.randomFruit(this.xcord); //TEST CODE FOR BANANA
+		this.randomFruit(); //TEST CODE FOR BANANA
 		 if (this.yGravity < 1500) {
 			 this.yGravity = this.yGravity + 100;
 		 }
@@ -114,7 +114,7 @@ var playState = {
                  this.banana.body.gravity.y = 100;
 				 console.log("This should be a banana");
 		 } else {
-				 this.ball = this.fruit.create(0, 0, 'ball');
+				 this.ball = this.fruit.create(xCord, yCord, 'ball');
 				 this.ball.body.gravity.y = 100;
 				 console.log("This should be the ball");
 		 }
