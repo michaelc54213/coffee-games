@@ -106,6 +106,7 @@ var playState = {
 		this.text.text = "Score: " + this.scoreNumber;
 		
 	 },
+
 	  randomFruit: function (banana, fruit, xCord, yCord, ball, platforms, boy) {
          var randomNum = Math.floor(Math.random() * 10);
 		 console.log(randomNum);
