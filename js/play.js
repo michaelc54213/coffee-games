@@ -47,7 +47,7 @@ var playState = {
 	this.ground.body.immovable = true;
 	},
 
-	update: function (yGrav, ball, xRandom, banana) {
+	update: function (yGrav, ball, xRandom, banana, platforms) {
 		//collide player and balls with ground
 		game.physics.arcade.overlap(this.ball, this.platforms, this.gameOver, null, this)
 		game.physics.arcade.overlap(this.banana, this.platforms, this.gameOver, null, this)
@@ -97,32 +97,27 @@ var playState = {
 			if (this.x === 10)
 				this.xCord = 600;
 
-		this.randomFruit(); //TEST CODE FOR BANANA
 		 if (this.yGravity < 1500) {
 			 this.yGravity = this.yGravity + 100;
 		 }
-	    this.ball.body.gravity.y = this.yGravity;              //creates the y gravity for the ball
-	    this.banana.body.gravity.y = this.yGravity;              //creates the y gravity for the ball
-
-		this.ball.position.x = this.xCord;
-		this.banana.position.x = this.xCord;
+		 this.randomFruit(xCord);
 
 		this.scoreNumber = this.scoreNumber + 10 
 		this.text.text = "Score: " + this.scoreNumber;
 		
 	 },
 
-	  randomFruit: function (banana, fruit, xCord, yCord, ball, platforms, boy) {
+	  randomFruit: function (banana, fruit, xCord, yGravity, ball, platforms, boy) {
          var randomNum = Math.floor(Math.random() * 10);
 		 console.log(randomNum);
 		 if (randomNum <= 5) {
-				 this.banana = this.fruit.create(0, 0, 'banana');
-                 this.banana.body.gravity.y = 100;
-				 console.log("This should be a banana");
+				 this.banana = this.fruit.create(this.xCord, 0, 'banana');
+                 this.banana.body.gravity.y = this.yGravity;
+				 console.log("This should be a banana", + "The xCord is" + this.xCord + " The yGravity is " + this.yGravity);
 		 } else {
-				 this.ball = this.fruit.create(xCord, yCord, 'ball');
-				 this.ball.body.gravity.y = 100;
-				 console.log("This should be the ball");
+				 this.ball = this.fruit.create(this.xCord, 0, 'ball');
+				 this.ball.body.gravity.y = this.yGravity;
+				 console.log("This should be the ball" + " The xCord of ball is " + this.xCord + " the yGravity is " + this.yGravity);
 		 }
 
 	},
