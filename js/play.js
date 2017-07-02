@@ -102,6 +102,11 @@ var playState = {
 			 this.yGravity = this.yGravity + 100;
 		 }
 	    this.ball.body.gravity.y = this.yGravity;              //creates the y gravity for the ball
+	    this.banana.body.gravity.y = this.yGravity;              //creates the y gravity for the ball
+
+		this.ball.position.x = this.xCord;
+		this.banana.position.x = this.xCord;
+
 		this.scoreNumber = this.scoreNumber + 10 
 		this.text.text = "Score: " + this.scoreNumber;
 		
