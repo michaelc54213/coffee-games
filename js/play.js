@@ -4,6 +4,7 @@ var playState = {
 	create: function() {
 	var ball;
 	var banana;
+	var strawberry;
 	var fruit;
 	var music;
 	var gameOverSound;
@@ -47,16 +48,20 @@ var playState = {
 	this.ground.body.immovable = true;
 	},
 
-	update: function (yGrav, ball, xRandom, banana, platforms) {
+	update: function (yGrav, ball, xRandom, banana, platforms, strawberry) {
 		//collide player and balls with ground
 		game.physics.arcade.overlap(this.ball, this.platforms, this.gameOver, null, this)
 		game.physics.arcade.overlap(this.banana, this.platforms, this.gameOver, null, this)
+		game.physics.arcade.overlap(this.strawberry, this.platforms, this.gameOver, null, this)
 
 		//checks collision for boy and ball
 		game.physics.arcade.overlap(this.ball, this.boy, this.collectBall, null, this)
 
 		//Checks for collision between boy and banana
 		game.physics.arcade.overlap(this.banana, this.boy, this.collectBall, null, this)
+
+		//Checks for collision between boy and banana
+		game.physics.arcade.overlap(this.strawberry, this.boy, this.collectBall, null, this)
 
 
 
@@ -110,16 +115,20 @@ var playState = {
 	  randomFruit: function (banana, fruit, xCord, yGravity, ball, platforms, boy) {
          var randomNum = Math.floor(Math.random() * 10);
 		 console.log(randomNum);
-		 if (randomNum <= 5) {
+		 if (randomNum <= 3) {
 				 this.banana = this.fruit.create(this.xCord, 0, 'banana');
                  this.banana.body.gravity.y = this.yGravity;
 				 console.log("This should be a banana", + "The xCord is" + this.xCord + " The yGravity is " + this.yGravity);
-		 } else {
+		 } else if (randomNum > 3 && randomNum <= 6){
 				 this.ball = this.fruit.create(this.xCord, 0, 'ball');
 				 this.ball.body.gravity.y = this.yGravity;
 				 console.log("This should be the ball" + " The xCord of ball is " + this.xCord + " the yGravity is " + this.yGravity);
-		 }
+		 } else  {
+				 this.strawberry = this.fruit.create(this.xCord, 0, 'strawberry');
+				 this.strawberry.body.gravity.y = this.yGravity;
+				 console.log("This should be the strawberry" + " The xCord of ball is " + this.xCord + " the yGravity is " + this.yGravity);
 
+		 }
 	},
 
 	 gameOver: function (ball, fruit, text, scoreNumber, gameOverSound) {
