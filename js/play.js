@@ -28,6 +28,11 @@ var playState = {
 	this.players = game.add.group();
 
 	this.boy = game.add.sprite(0, game.world.height - 80, 'boy');	//add fruitboy
+
+	//adds sprite animation
+	this.boy.animations.add('left', [1,2], 10, true);
+	this.boy.animations.add('right', [3,4], 10, true);
+
 	game.physics.arcade.enable(this.boy);	//enable physics
 	this.boy.body.collideWorldBounds = true;	//boy wont go out of bounds
 
@@ -74,11 +79,15 @@ var playState = {
 		{
 			//move to the left
 			this.boy.body.velocity.x = -900;
+
+			this.boy.animations.play('left');
 		}
 		if(cursors.right.isDown)
 		{
 			//move to the right
 			this.boy.body.velocity.x = 900;
+
+			this.boy.animations.play('right');
 		}
 	},
 
