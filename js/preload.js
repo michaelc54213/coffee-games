@@ -10,6 +10,7 @@ var preloadState = {
 		game.load.image('ball', 'assets/fruit_apple1.png');
 		game.load.image('banana', 'assets/banana.png');
 		game.load.image('strawberry', 'assets/strawberry.png');
+		game.load.image('background', 'assets/background.png');
 		game.load.spritesheet('boy', 'assets/user-player-sprite-sheet.png', 32, 32, 5);
 		game.load.audio('bleep', 'assets/bleep.mp3');
 		game.load.audio('gameover', 'assets/gameover.mp3');

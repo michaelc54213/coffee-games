@@ -4,6 +4,7 @@ var playState = {
 	create: function() {
 	var ball;
 	var banana;
+	var background;
 	var strawberry;
 	var fruit;
 	var music;
@@ -14,6 +15,8 @@ var playState = {
 	var text;
 	var gulpNoise;
 	var checkCollision;
+	//adds background
+	this.background = game.add.sprite(0, 0, 'background');
 	//text style
 	var style = { font: "20px Arial", fill: "#ff0044", align: "center"};
 
@@ -78,14 +81,14 @@ var playState = {
 		if (cursors.left.isDown)
 		{
 			//move to the left
-			this.boy.body.velocity.x = -900;
+			this.boy.body.velocity.x = -800;
 
 			this.boy.animations.play('left');
 		}
 		if(cursors.right.isDown)
 		{
 			//move to the right
-			this.boy.body.velocity.x = 900;
+			this.boy.body.velocity.x = 800;
 
 			this.boy.animations.play('right');
 		}
