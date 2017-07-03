@@ -73,12 +73,12 @@ var playState = {
 		if (cursors.left.isDown)
 		{
 			//move to the left
-			this.boy.body.velocity.x = -600;
+			this.boy.body.velocity.x = -900;
 		}
 		if(cursors.right.isDown)
 		{
 			//move to the right
-			this.boy.body.velocity.x = 600;
+			this.boy.body.velocity.x = 900;
 		}
 	},
 
@@ -102,7 +102,7 @@ var playState = {
 			if (this.x === 10)
 				this.xCord = 600;
 
-		 if (this.yGravity < 1500) {
+		 if (this.yGravity < 3000) {
 			 this.yGravity = this.yGravity + 100;
 		 }
 		 this.randomFruit(xCord);
