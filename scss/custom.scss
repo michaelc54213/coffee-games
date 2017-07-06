@@ -1,8 +1,10 @@
-//custom.css
-.testing {
-		width: percentage(5/7);
-}
+//custom.scss
+$breakpoint-tablet: 980px;
 
-body {
-		background: white;
+
+//CUSTOM MEDIA QUERIES
+@media (max-width: $breakpoint-tablet) {
+   .hide-container {
+      display: none;
+   }
 }

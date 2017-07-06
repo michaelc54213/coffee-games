@@ -1,5 +1,3 @@
-.testing {
-  width: 71.42857%; }
-
-body {
-  background: white; }
+@media (max-width: 980px) {
+  .hide-container {
+    display: none; } }
