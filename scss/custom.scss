@@ -1,10 +1,35 @@
 //custom.scss
 $breakpoint-tablet: 980px;
+$breakpoint-mobile: 760px;
+$white: #fff;
 
+//GLOBAL STYLES
+#image-text {
+		text-align: center;
+		font-family: Helvetica Neue, Sans-Serif;
+		font-size: 30px;
+		color: $white;
+		margin-top: -400px;
+		vertical-align: middle;
+		font-weight: 700;
+}
 
 //CUSTOM MEDIA QUERIES
 @media (max-width: $breakpoint-tablet) {
    .hide-container {
       display: none;
-   }
+   },
+   #image-text {
+	font-size: 18px;
+	margin-top: -300px;
+	}
 }
+
+@media (max-width: $breakpoint-mobile) {
+	#image-text {
+	  font-size: 15px;
+	  margin-top: -200px;
+	  }
+}
+
+

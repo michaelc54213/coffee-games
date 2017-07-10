@@ -1,3 +1,21 @@
+#image-text {
+  text-align: center;
+  font-family: Helvetica Neue, Sans-Serif;
+  font-size: 30px;
+  color: #fff;
+  margin-top: -400px;
+  vertical-align: middle;
+  font-weight: 700; }
+
 @media (max-width: 980px) {
   .hide-container {
-    display: none; } }
+    display: none; }
+  
+  #image-text {
+    font-size: 18px;
+    margin-top: -300px; } }
+
+@media (max-width: 760px) {
+  #image-text {
+    font-size: 15px;
+    margin-top: -200px; } }
