@@ -2,8 +2,17 @@
 $breakpoint-tablet: 980px;
 $breakpoint-mobile: 760px;
 $white: #fff;
+$font-one: Helvetica Neue, Sans-Serif;
+$font-size: 30px;
 
 //GLOBAL STYLES
+.headline {
+		text-align: center;
+		font-family: $font-one;
+		font-size: $font-size;
+		z-index: -2;
+		padding: 30px 0 30px 0;
+}
 #image-text {
 		text-align: center;
 		font-family: Helvetica Neue, Sans-Serif;
@@ -19,6 +28,9 @@ $white: #fff;
    .hide-container {
       display: none;
    },
+   .col-md-8 {
+     margin-left: 10%;
+   }
    #image-text {
 	font-size: 18px;
 	margin-top: -300px;

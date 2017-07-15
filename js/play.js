@@ -4,6 +4,8 @@ var playState = {
 	create: function() {
 	var ball;
 	var banana;
+	var background;
+	var strawberry;
 	var fruit;
 	var music;
 	var gameOverSound;
@@ -13,6 +15,8 @@ var playState = {
 	var text;
 	var gulpNoise;
 	var checkCollision;
+	//adds background
+	this.background = game.add.sprite(0, 0, 'background');
 	//text style
 	var style = { font: "20px Arial", fill: "#ff0044", align: "center"};
 
@@ -27,6 +31,11 @@ var playState = {
 	this.players = game.add.group();
 
 	this.boy = game.add.sprite(0, game.world.height - 80, 'boy');	//add fruitboy
+
+	//adds sprite animation
+	this.boy.animations.add('left', [1,2], 10, true);
+	this.boy.animations.add('right', [3,4], 10, true);
+
 	game.physics.arcade.enable(this.boy);	//enable physics
 	this.boy.body.collideWorldBounds = true;	//boy wont go out of bounds
 
@@ -47,16 +56,20 @@ var playState = {
 	this.ground.body.immovable = true;
 	},
 
-	update: function (yGrav, ball, xRandom, banana) {
+	update: function (yGrav, ball, xRandom, banana, platforms, strawberry) {
 		//collide player and balls with ground
 		game.physics.arcade.overlap(this.ball, this.platforms, this.gameOver, null, this)
 		game.physics.arcade.overlap(this.banana, this.platforms, this.gameOver, null, this)
+		game.physics.arcade.overlap(this.strawberry, this.platforms, this.gameOver, null, this)
 
 		//checks collision for boy and ball
 		game.physics.arcade.overlap(this.ball, this.boy, this.collectBall, null, this)
 
 		//Checks for collision between boy and banana
 		game.physics.arcade.overlap(this.banana, this.boy, this.collectBall, null, this)
+
+		//Checks for collision between boy and banana
+		game.physics.arcade.overlap(this.strawberry, this.boy, this.collectBall, null, this)
 
 
 
@@ -68,12 +81,16 @@ var playState = {
 		if (cursors.left.isDown)
 		{
 			//move to the left
-			this.boy.body.velocity.x = -600;
+			this.boy.body.velocity.x = -800;
+
+			this.boy.animations.play('left');
 		}
 		if(cursors.right.isDown)
 		{
 			//move to the right
-			this.boy.body.velocity.x = 600;
+			this.boy.body.velocity.x = 800;
+
+			this.boy.animations.play('right');
 		}
 	},
 
@@ -97,29 +114,33 @@ var playState = {
 			if (this.x === 10)
 				this.xCord = 600;
 
-		this.randomFruit(); //TEST CODE FOR BANANA
-		 if (this.yGravity < 1500) {
+		 if (this.yGravity < 3000) {
 			 this.yGravity = this.yGravity + 100;
 		 }
-	    this.ball.body.gravity.y = this.yGravity;              //creates the y gravity for the ball
+		 this.randomFruit(xCord);
+
 		this.scoreNumber = this.scoreNumber + 10 
 		this.text.text = "Score: " + this.scoreNumber;
 		
 	 },
 
-	  randomFruit: function (banana, fruit, xCord, yCord, ball, platforms, boy) {
+	  randomFruit: function (banana, fruit, xCord, yGravity, ball, platforms, boy) {
          var randomNum = Math.floor(Math.random() * 10);
 		 console.log(randomNum);
-		 if (randomNum <= 5) {
-				 this.banana = this.fruit.create(0, 0, 'banana');
-                 this.banana.body.gravity.y = 100;
-				 console.log("This should be a banana");
-		 } else {
-				 this.ball = this.fruit.create(xCord, yCord, 'ball');
-				 this.ball.body.gravity.y = 100;
-				 console.log("This should be the ball");
-		 }
+		 if (randomNum <= 3) {
+				 this.banana = this.fruit.create(this.xCord, 0, 'banana');
+                 this.banana.body.gravity.y = this.yGravity;
+				 console.log("This should be a banana", + "The xCord is" + this.xCord + " The yGravity is " + this.yGravity);
+		 } else if (randomNum > 3 && randomNum <= 6){
+				 this.ball = this.fruit.create(this.xCord, 0, 'ball');
+				 this.ball.body.gravity.y = this.yGravity;
+				 console.log("This should be the ball" + " The xCord of ball is " + this.xCord + " the yGravity is " + this.yGravity);
+		 } else  {
+				 this.strawberry = this.fruit.create(this.xCord, 0, 'strawberry');
+				 this.strawberry.body.gravity.y = this.yGravity;
+				 console.log("This should be the strawberry" + " The xCord of ball is " + this.xCord + " the yGravity is " + this.yGravity);
 
+		 }
 	},
 
 	 gameOver: function (ball, fruit, text, scoreNumber, gameOverSound) {
