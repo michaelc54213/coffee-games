@@ -1,8 +1,69 @@
-//custom.css
-.testing {
-		width: percentage(5/7);
+//custom.scss
+$breakpoint-tablet: 980px;
+$breakpoint-mobile: 760px;
+$white: #fff;
+$font-one: Helvetica Neue, Sans-Serif;
+$font-size: 30px;
+
+//GLOBAL STYLES
+.headline {
+		text-align: center;
+		font-family: $font-one;
+		font-size: $font-size;
+		z-index: -2;
+		padding: 30px 0 30px 0;
+}
+#image-text {
+		text-align: center;
+		font-family: Helvetica Neue, Sans-Serif;
+		font-size: 30px;
+		color: $white;
+		margin-top: -400px;
+		vertical-align: middle;
+		font-weight: 700;
 }
 
-body {
-		background: white;
+#gameDiv {
+		width: 50%;
+		margin: 0 auto;
+		display: block;
+}
+
+//CUSTOM MEDIA QUERIES
+@media (max-width: $breakpoint-tablet) {
+   .hide-container {
+      display: none;
+   },
+   .col-md-8 {
+     margin-left: 10%;
+   }
+   #image-text {
+	font-size: 18px;
+	margin-top: -300px;
+	}
+}
+
+@media (max-width: $breakpoint-mobile) {
+	#image-text {
+	  font-size: 15px;
+	  margin-top: -200px;
+	  }
+}
+
+@media (max-width: 1000px) {
+		#gameDiv {
+		  width: 80%;
+  }
+}
+
+@media (max-width: 700px) {
+       #gameDiv {
+		  display: none;
+  }
+}
+
+@media (min-width: 701px) {
+		.mobile-display {
+		  display: none;
+  }
 }

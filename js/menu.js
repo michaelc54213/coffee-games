@@ -1,10 +1,5 @@
 var menuState = {
 	create: function() {
-		
-		var introMusic = game.add.audio('intro'); 
-
-		introMusic.play(); //adds intro music to menu
-		introMusic.loopFull(0.4); //loops intro audio
 
 		var nameLabel = game.add.text(120, 80, 'Catch The Fruit!', {font: '50px Arial', fill: '#fff'});
 		var instructionLabel = game.add.text(20, game.world.height - 130, 'Use left arrow key to move left, and right arrow key to move right', {font: '20px Arial', fill: '#fff'});
