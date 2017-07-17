@@ -3,6 +3,7 @@ var playState = {
 	//game logic 
 	create: function() {
 	var ball;
+	var introMusic;
 	var banana;
 	var background;
 	var strawberry;
@@ -15,6 +16,10 @@ var playState = {
 	var text;
 	var gulpNoise;
 	var checkCollision;
+	//plays music
+	this.introMusic = game.add.audio('intro');
+	this.introMusic.play();
+	this.introMusic.loopFull(0.4);
 	//adds background
 	this.background = game.add.sprite(0, 0, 'background');
 	//text style
