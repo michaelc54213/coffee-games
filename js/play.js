@@ -16,13 +16,10 @@ var playState = {
 	var text;
 	var gulpNoise;
 	var checkCollision;
-<<<<<<< HEAD
-=======
 	//plays music
 	this.introMusic = game.add.audio('intro');
 	this.introMusic.play();
 	this.introMusic.loopFull(0.4);
->>>>>>> home-design
 	//adds background
 	this.background = game.add.sprite(0, 0, 'background');
 	//text style
