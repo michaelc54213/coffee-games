@@ -67,3 +67,8 @@ $font-size: 30px;
 		  display: none;
   }
 }
+
+@media (min-width: 1000px) {
+		#game-title {
+		  display: block;
+		  margin: 0 auto;
