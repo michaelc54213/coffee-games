@@ -45,3 +45,8 @@
 @media (min-width: 701px) {
   .mobile-display {
     display: none; } }
+
+@media (min-width: 1000px) {
+  #game-title {
+    display: block;
+    margin: 0 auto; } }
