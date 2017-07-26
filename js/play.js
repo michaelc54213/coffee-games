@@ -106,6 +106,8 @@ var playState = {
 		this.music = game.sound.play('bleep');
 			this.x = Math.floor(Math.random() * 10);
 			this.xCord = 0;
+			//adds random generator for xCord
+			//Gives 6 different options
 			if (this.x <= 2)
 				this.xCord = 100;
 			if (this.x > 2 && this.x <= 4)
@@ -122,7 +124,7 @@ var playState = {
 		 if (this.yGravity < 3000) {
 			 this.yGravity = this.yGravity + 100;
 		 }
-		 this.randomFruit(xCord);
+		 this.randomFruit(xCord); //passes xCord into randomFruit function
 
 		this.scoreNumber = this.scoreNumber + 10 
 		this.text.text = "Score: " + this.scoreNumber;
@@ -130,25 +132,23 @@ var playState = {
 	 },
 
 	  randomFruit: function (banana, fruit, xCord, yGravity, ball, platforms, boy) {
+		//random fruit generator for all 3 fruit
          var randomNum = Math.floor(Math.random() * 10);
-		 console.log(randomNum);
 		 if (randomNum <= 3) {
 				 this.banana = this.fruit.create(this.xCord, 0, 'banana');
                  this.banana.body.gravity.y = this.yGravity;
-				 console.log("This should be a banana", + "The xCord is" + this.xCord + " The yGravity is " + this.yGravity);
 		 } else if (randomNum > 3 && randomNum <= 6){
 				 this.ball = this.fruit.create(this.xCord, 0, 'ball');
 				 this.ball.body.gravity.y = this.yGravity;
-				 console.log("This should be the ball" + " The xCord of ball is " + this.xCord + " the yGravity is " + this.yGravity);
 		 } else  {
 				 this.strawberry = this.fruit.create(this.xCord, 0, 'strawberry');
 				 this.strawberry.body.gravity.y = this.yGravity;
-				 console.log("This should be the strawberry" + " The xCord of ball is " + this.xCord + " the yGravity is " + this.yGravity);
 
 		 }
 	},
 
 	 gameOver: function (ball, fruit, text, scoreNumber, gameOverSound) {
+		//when ball collision with ground is detected
 		this.gameOverSound = game.sound.play('gameover');
 		ball.kill();
 		game.state.start('gameOver');
@@ -161,7 +161,6 @@ var playState = {
 	 	this.xRandom = Math.floor(Math.random() * 10);
 	 	if (xRandom > 0 && xRandom < 5.000001) {
 	 		this.banana = this.fruit.create(xCord, 0, 'banana');
-	 		//add physics here
 
 	 	if (xRandom > 5.000001 && xRandom < 10)
 	 		this.ball = this.fruit.create(xCord, 0, 'ball');
