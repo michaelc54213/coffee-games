@@ -131,7 +131,7 @@ var playState = {
 		
 	 },
 
-	  randomFruit: function (banana, fruit, xCord, yGravity, ball, platforms, boy) {
+	  randomFruit: function (banana, fruit, xCord, yGravity, ball, boy) {
 		//random fruit generator for all 3 fruit
          var randomNum = Math.floor(Math.random() * 10);
 		 if (randomNum <= 3) {
@@ -147,7 +147,7 @@ var playState = {
 		 }
 	},
 
-	 gameOver: function (ball, fruit, text, scoreNumber, gameOverSound) {
+	 gameOver: function (ball, fruit, scoreNumber, gameOverSound) {
 		//when ball collision with ground is detected
 		this.gameOverSound = game.sound.play('gameover');
 		ball.kill();
@@ -155,7 +155,7 @@ var playState = {
 		return this.scoreNumber;
 	 },
 
-	 spawnFruit: function (xCord, fruit, ball, text) {
+	 spawnFruit: function (xCord, fruit, ball) {
 	 	//code for respawn fruit goes here
 	 	var xRandom = 0;
 	 	this.xRandom = Math.floor(Math.random() * 10);

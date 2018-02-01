@@ -1,0 +1,6 @@
+{
+    "require": {
+        "pug-php/pug": "^2.6",
+        "phpmailer/phpmailer": "^6.0"
+    }
+}
