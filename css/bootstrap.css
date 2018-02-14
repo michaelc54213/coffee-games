@@ -4167,7 +4167,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -4591,6 +4590,9 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse {
   border-color: #080808;
   background-color: white;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;

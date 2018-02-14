@@ -19,6 +19,7 @@
   margin: 0 auto;
   display: block; }
 
+
 @media (max-width: 980px) {
   .hide-container {
     display: none; }
