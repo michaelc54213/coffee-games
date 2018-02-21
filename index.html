@@ -41,7 +41,7 @@
 
   <body>
 
-      <div class="container" style="max-width: 70rem; margin-left: auto; margin-right: auto;">
+      <div class="container" class="top_container" style="">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -50,10 +50,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Cofffee Games</a>
+					<a class="navbar-brand" href="#" style="color: white;">Coffee Games</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" style="border-bottom: 1px solid white;">
             <li ><a href="/">Home</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="games.html">Games</a></li>
@@ -62,32 +62,28 @@
 	</nav>
         </div><!--/.nav-collapse -->
 			</div>
-			<div class="headline" style="margin-top: 80px;">
-			  <p style="font-weight: bold; font-size: 1.3em;">Coffee Games</p>
-			  <p style="font-size: .6em;">Time for some sweet coffee and some sweet games</p>
+			<div class="headline headline-img">
+			  <p class="headline_txt">Coffee Games</p>
+			  <p style="font-size: .6em; font-weight: 100; letter-spacing: 3px;">Time for some sweet coffee and some sweet games</p>
+				<button class="btn btn-layout">Learn More</button>
 			</div>
 
-	<div style="max-width: 80%; margin-left: auto; margin-right: auto;"><img src="img/coffee-pic-main.jpg" alt="Coffee Logo" id="game-title-img" class="img-responsive">
-	</div>
+	<div class="img_banner" style="background-image: url('img/coffee-pic-main.jpg');"></div>
 
-	<div class="container">	
+	<div class="container" style="color: #252728; font-weight: 100; border-bottom: 1px solid #252728;">	
 			<div class="headline">
 			  <p>Recent Games</p>
-			  <p style="font-size: 12px;">Photos Of Catch The Fruit!</p>
 			</div>
 	</div>
 
-	<div class="container">
+	<div class="container" style="background: white; padding-bottom: 30px;">
         <div class="row">
-	       <div class="col-md-8" style="border: 1px solid blue;">
+	       <div class="col-md-6" style="margin-top: 30px;">
 				   <img src="img/catch-the-fruit-title.jpg" alt="Catch The Fruit Title" id="game-title" class="img-responsive">
 		   </div>
 		   <!-- IF MOBILE HIDE THESE PICS -->
-		   <div class="col-md-4 hide-container"  style="border: 1px solid red;">
-				  <img src="img/catch-the-fruit-sidepic.jpg" alt="Catch The Fruit Stage">
-		   </div>
-		   <div class="col-md-4 hide-container"  style=" margin-top: 75px;">
-				  <img src="img/catch-the-fruit-game-over.jpg" alt="Catch The Fruit Stage">
+		   <div class="col-md-6"  style="margin-top: 30px; line-height: 1.6em; font-size: 1.2em;">
+				 <p>Welcome to Catch The Fruit! A simple arcade game built on top of the Phaser.io javascript engine. You play as a character named Hoji. A lonely space alien just looking to gather as much fruit as he possible can! However, if he drops one piece of fruit it's game over, so get ready to test your skill and see how much fruit you can gather! Hope you have fun, and maybe beat the high score!
 		   </div>
 		</div>
 	</div>

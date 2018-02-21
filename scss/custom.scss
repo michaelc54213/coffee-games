@@ -4,8 +4,18 @@ $breakpoint-mobile: 760px;
 $white: #fff;
 $font-one: Helvetica Neue, Sans-Serif;
 $font-size: 30px;
+$max-width: 100%;
+$darker-white: #f2f4f7;
+$headline-weight: 100;
+$letter-spacing: 3px;
+
+
 
 //GLOBAL STYLES
+body {
+	background: #f8f8f8;
+}
+
 .headline {
 		text-align: center;
 		font-family: $font-one;
@@ -29,17 +39,66 @@ $font-size: 30px;
 		display: block;
 }
 
+.img_banner {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0px;
+	z-index: 0;
+	margin-top: -100px;
+	filter: brightness(50%);
+	height: 500px;
+	background-image: url('img/coffee-pic-main.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.top-container {
+	max-width: $max-width;
+	margin-left: auto;
+	margin-right: auto; }
+
+.headline-img {
+	margin-top: 40px;
+	z-index: 999;
+	position: absolute;
+	right: 0;
+	left: 0;
+	color: $darker-white; }
+
+.btn-layout {
+	border: 2px solid white;
+	background:none;
+	width: 200px;
+	height: 55px;
+	font-weight: 400;
+	letter-spacing: 3px;
+	margin-top: 30px; 
+
+}
+
+.headline_txt {
+	font-weight: 100;
+	font-size: 1.5em; 
+	letter-spacing: 3px;
+}
+	
+
 //CUSTOM MEDIA QUERIES
 @media (max-width: $breakpoint-tablet) {
    .hide-container {
       display: none;
-   },
+   }
    .col-md-8 {
      margin-left: 10%;
    }
    #image-text {
 	font-size: 18px;
 	margin-top: -300px;
+	}
+	img {
+		margin-right: auto;
+		margin-left: auto;
 	}
 }
 
